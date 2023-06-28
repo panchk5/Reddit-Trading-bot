@@ -102,3 +102,37 @@ account = api.get_account()
 print(f'Account ID: {account.id}')
 print(f'Cash: ${account.cash}')
 
+# use this only once so you don't spam many buy orders
+
+def buy_all():
+    cash = 90000
+    for i in range(len(ticker_percentages)):
+        max_budget = cash * (ticker_percentages[i][1] / 100)
+        latest_price = api.get_latest_trade(ticker_percentages[i][0]).price
+        quantity = int(max_budget / latest_price)
+        order = api.submit_order(
+            symbol=ticker_percentages[i][0],
+            qty=quantity,
+            side='buy',
+            type='market',
+            time_in_force='gtc'
+        )
+
+portfolio = api.list_positions()
+
+def sell_all():
+    for position in portfolio:
+        symbol = position.symbol
+        quantity = position.qty
+        order = api.submit_order(
+            symbol=symbol,
+            qty=quantity,
+            side='sell',
+            type='market',
+            time_in_force='gtc'
+        )
+
+def refresh():
+    sell_all()
+    buy_all()
+
