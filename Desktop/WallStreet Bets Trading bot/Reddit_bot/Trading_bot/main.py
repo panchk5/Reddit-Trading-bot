@@ -91,8 +91,8 @@ print(ticker_percentages)
 
 import alpaca_trade_api as tradeapi
 
-api_key = "PKAI4GTFN5H2U9P1MYWC"
-secret = "1Zr0NmxMfugVdloccntM0HGatOzwFPoRaF2EZ0NY"
+api_key = "your key"
+secret = "ur secret"
 base_url = 'https://paper-api.alpaca.markets'
 
 api = tradeapi.REST(api_key, secret, base_url, api_version='v2')
