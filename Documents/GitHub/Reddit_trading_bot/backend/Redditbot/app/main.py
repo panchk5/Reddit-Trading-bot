@@ -14,7 +14,7 @@ chrome_options = Options()
 chrome_options.add_argument("--headless")
 
 # Set path to the chromedriver executable
-chrome_driver_path = r"C:\Users\krish\Downloads\chromedriver-win64\chromedriver-win64\chromedriver.exe"
+chrome_driver_path = r"path"
 
 # Create a new Chrome instance
 driver = webdriver.Chrome(service=Service(chrome_driver_path))
