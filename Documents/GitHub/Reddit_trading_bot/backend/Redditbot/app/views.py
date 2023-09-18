@@ -78,3 +78,9 @@ def portfolio_earnings(request):
     }
 
     return JsonResponse(context, safe=False)
+ 
+
+
+def front(request):
+    context = {}
+    return render(request, 'index.html', context)
