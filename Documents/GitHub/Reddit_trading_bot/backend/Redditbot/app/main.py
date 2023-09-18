@@ -14,7 +14,7 @@ chrome_options = Options()
 chrome_options.add_argument("--headless")
 
 # Set path to the chromedriver executable
-chrome_driver_path = r"C:\Users\krish\Downloads\chromedriver-win64\chromedriver-win64\chromedriver.exe"
+chrome_driver_path = r"path"
 
 # Create a new Chrome instance
 driver = webdriver.Chrome(service=Service(chrome_driver_path))
@@ -91,9 +91,9 @@ print(ticker_percentages)
 
 import alpaca_trade_api as tradeapi
 
-api_key = "PKAI4GTFN5H2U9P1MYWC"
-secret = "1Zr0NmxMfugVdloccntM0HGatOzwFPoRaF2EZ0NY"
-base_url = 'https://paper-api.alpaca.markets'
+api_key = ""
+secret = ""
+base_url = ''
 
 api = tradeapi.REST(api_key, secret, base_url, api_version='v2')
 
